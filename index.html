@@ -1,0 +1,815 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bassoon Reed – Interactive Test Navigator</title>
+  styles.css
+  app.js</script>
+</head>
+<body onload="openTest('Intro')">
+  <header class="header">
+    <h1>Bassoon Reed – Interactive Test Navigator</h1>
+    <p class="desc">Click a test in the sidebar to view the exact instructions. Use <b>Pass</b> / <b>Issue</b> to move forward or show solutions. Use cross‑reference buttons to jump between related tests.</p>
+  </header>
+
+  <main class="layout">
+    <!-- Sidebar tabs -->
+    <nav class="sidebar">
+      <div class="search">
+        <input id="search" type="search" placeholder="Search tests…" oninput="filterTabs()" />
+      </div>
+
+      <!-- Tabs: update titles here if you want -->
+      <button class="tab" id="tab-Intro"  onclick="openTest('Intro')">GETTING STARTED</button>
+      <button class="tab" id="tab-T01"   onclick="openTest('T01')">Test 1: F and E</button>
+      <button class="tab" id="tab-T02"   onclick="openTest('T02')">Test 2: E♭ and D</button>
+      <button class="tab" id="tab-T03"   onclick="openTest('T03')">Test 3: C♯, C, and B</button>
+      <button class="tab" id="tab-T04"   onclick="openTest('T04')">Test 4: B♭, A, A♭, G, and F♯</button>
+      <button class="tab" id="tab-T05"   onclick="openTest('T05')">Test 5: Low F, E, E♭, D</button>
+      <button class="tab" id="tab-T06"   onclick="openTest('T06')">Test 6: D♭, C, B, B♭</button>
+      <button class="tab" id="tab-T07"   onclick="openTest('T07')">Test 7: Low Register Articulation</button>
+      <button class="tab" id="tab-T08"   onclick="openTest('T08')">Test 8: Harmonic (F♯, G, A♭)</button>
+      <button class="tab" id="tab-T09"   onclick="openTest('T09')">Test 9: Harmonic (A & B♭)</button>
+      <button class="tab" id="tab-T10"   onclick="openTest('T10')">Test 10: Double‑Sensitive B & C</button>
+      <button class="tab" id="tab-T11"   onclick="openTest('T11')">Test 11: Fork B♭</button>
+      <button class="tab" id="tab-T12"   onclick="openTest('T12')">Test 12: C♯, D, and E♭</button>
+      <button class="tab" id="tab-T13"   onclick="openTest('T13')">Test 13: Alternate (E, F, F♯)</button>
+      <button class="tab" id="tab-T14"   onclick="openTest('T14')">Test 14: Slur‑Ups</button>
+      <button class="tab" id="tab-T15"   onclick="openTest('T15')">Test 15: Articulation & Croaking</button>
+      <button class="tab" id="tab-T16"   onclick="openTest('T16')">Test 16: Harmonic (G & A♭)</button>
+      <button class="tab" id="tab-T17"   onclick="openTest('T17')">Test 17: One‑Handed Slurs</button>
+      <button class="tab" id="tab-T18"   onclick="openTest('T18')">Test 18: High‑Register Slur‑Ups</button>
+      <button class="tab" id="tab-T19"   onclick="openTest('T19')">Test 19: Upper Register Tunings</button>
+      <button class="tab" id="tab-T20"   onclick="openTest('T20')">Test 20: Final Tests</button>
+    </nav>
+
+    <!-- Content pages -->
+    <section id="content" class="content">
+
+      <!-- INTRO -->
+      <article class="test show" id="Intro">
+        <div class="card">
+          <h2>GETTING STARTED <span class="badge">Intro</span></h2>
+          <p><strong>What to check on your reed and bassoon:</strong></p>
+          <ul>
+            <li>Have you prepared your reed, breaking down the back using the soak and dry process? (Soak and dry a new reed 5 times before testing.)</li>
+            <li>Blade is slightly longer than your normal “vibrating length” (VL): from tip to 1st wire. Average finished VL is 28.5mm.</li>
+            <li>Balance the channel tapers. Run your finger up each channel (Fig. A), identifying high spots. Sand high spots as needed.</li>
+            <li>Is reed moistened in mouth or water for up to 1 minute? Do not over‑soak reeds! Wait until tip opening settles. Swollen reeds need 10 minutes to shed excess water.</li>
+            <li>Does the moistened reed have a normal tip opening (1.5mm or ~1/16") that is balanced and symmetrical?</li>
+            <li>Check if wires stay in correct positions. 2nd wire must stay firmly in place when wetted, but 1st wire should be movable.</li>
+            <li>Does the reed blow easily, sounding a pitch or crow?</li>
+            <li>Reed fits on bocal 6–10mm (~1/4–3/8").</li>
+            <li>Bocal fits tightly in wing joint; wing fits tightly into boot. Whisper key pad closes properly with “pancake” (Low E) key.</li>
+            <li>Finger holes (F, E, D, C, and B) are clean (with cotton swabs or tone‑hole brush).</li>
+            <li>Is bassoon (and the room) warmed up to playing temperature?</li>
+          </ul>
+          <div class="actions">
+            <button class="pass" onclick="nextTest('Intro')">Pass → Go to Test 1</button>
+            <button class="issue" onclick="alert('Fix intro items until they pass, then proceed to Test 1.')">Not Passed → Review & Fix</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- === TEST 1: F and E === -->
+      <article class="test" id="T01">
+        <div class="card">
+          <h2>Test 1: F and E <span class="badge">T01</span></h2>
+          <h3>1.1: Pitch Centering</h3>
+          <ol>
+            <li>Play F with a full tone.</li>
+            <li>Without adjusting, check the pitch on the tuner.</li>
+            <li>Repeat with E.</li>
+            <li>Make necessary adjustments below until these notes play comfortably in tune with little effort.</li>
+          </ol>
+          <div class="actions">
+            <button class="pass"  onclick="nextTest('T01')">Pass → Next Test</button>
+            <button class="issue" onclick="toggleDetails('T01_details')">Issue → Show Solutions</button>
+            <button class="link"  onclick="prevTest('T01')">← Back to Previous Test</button>
+          </div>
+          <div class="details" id="T01_details">
+            <h3>IF FLAT, unstable, or sags in pitch:</h3>
+            <ul>
+              <li>Flip the reed, opposite (stronger) blade up. (Thumbnail Test)</li>
+              <li>Ream for deeper bocal penetration (8–10mm).</li>
+              <li>Adjust wires to close tip opening (1T) or strengthen blade arch (2S/1S). Tighten and/or round 1st and 2nd wires.</li>
+              <li>Clip the tip in the yellow shaded area to shorten the blade length, f‑f to e‑e. Cut a very small amount at a time.</li>
+              <li>Check lateral taper of tip. Ensure the center is thicker than corners.</li>
+              <li>Narrow tip width f → d by lightly sanding or filing the rails.</li>
+            </ul>
+            <h3>IF SHARP or rises with articulation:</h3>
+            <ul>
+              <li>Adjust wires to open tip: 2T (and/or 1S).</li>
+              <li>For F, starting ~2mm from tip, thin and taper from e‑e to f‑f at a 30–45° angle. Knife “nibble” overlapping slices across the tip into the plaque, or remove plaque and drag tip across sandpaper.</li>
+              <li>For F fine tuning, thin along the extreme tip at ~75°: Chisel Tip.</li>
+              <li>For E, taper and thin the tip thickness by removing cane from a‑e to f.</li>
+              <li>Ensure the tip is thickest at the center (a) and thinnest at the corners (f‑e). Separate blades with plaque to inspect and compare thickness. Check balanced tip shading against a strong light source.</li>
+              <li>When thinning the tip with a knife, slice, do not scrape, which can leave a dip behind the tip.</li>
+            </ul>
+            <h3>1.2: Ear Plug Test</h3>
+            <ol>
+              <li>Hold the test note exactly in tune.</li>
+              <li>Plug the right ear‑flap with your finger; note if pitch/tone shifts sharp/bright or flat/dull; compare open vs plugged.</li>
+              <li>Adjust until the pitch matches as closely as possible.</li>
+            </ol>
+            <h3>1.3: Stability and Articulation</h3>
+            <ol>
+              <li>Play the examples; note if (a) articulate clearly, (b) sag, or (c) rise in pitch.</li>
+              <li>Adjust until stable and in tune, with clear and easy articulation.</li>
+            </ol>
+          </div>
+        </div>
+      </article>
+
+      <!-- === TEST 2: E♭ and D === -->
+      <article class="test" id="T02">
+        <div class="card">
+          <h2>Test 2: E♭ and D <span class="badge">T02</span></h2>
+          <h3>2.1: Pitch Centering on E</h3>
+          <ol>
+            <li>Play as softly as possible from E to “bare” fork E♭ (LH 1–3 only, no additional keys). E♭ should be in tune, stable, and focused.</li>
+            <li>Repeat, slurring from E to D.</li>
+            <li>Make necessary adjustments below.</li>
+          </ol>
+          <div class="actions">
+            <button class="pass"  onclick="nextTest('T02')">Pass → Next Test</button>
+            <button class="issue" onclick="toggleDetails('T02_details')">Issue → Show Solutions</button>
+            <button class="link"  onclick="prevTest('T02')">← Back to Previous Test</button>
+          </div>
+          <div class="details" id="T02_details">
+            <h3>IF SHARP, stuffy, or unstable (or if adding the B♭ key and the RH 2nd finger stabilizes E♭):</h3>
+            <ul>
+              <li>Adjust wires for more vibrancy (less blade arch): 1T/2T. You may need to undo this adjustment if D is flat or becomes flat.</li>
+              <li>For E♭: thin and taper the corner wings (a‑d‑f) from c‑a toward f.</li>
+              <li>For D: deepen line c‑f by scraping or expand the wing taper from c‑f toward d (both help to lower E♭). Avoid creating a dip at point d.</li>
+              <li>Check if corners flex equally up/down (twist test) and equally right/left. If one side resists bending more, taper the extreme corner and/or along the dashed line inside the edge from d toward f (or along the entire blade if needed).</li>
+              <li>If stuffy/non‑vibrant: carefully thin and taper within the “Delta” c‑c toward a. Do this gradually; take care not to weaken the point of resistance (X) which supports pitch stability on E.</li>
+              <li>Check if tip closes evenly to the center. Sand or scrape the wing(s) (c toward f) on side(s) that close last; if more is needed, scrape from behind c toward f‑a.</li>
+            </ul>
+            <h3>IF FLAT:</h3>
+            <ul>
+              <li>Adjust wires for more blade strength: 2S/1S.</li>
+              <li>Round and tighten the 2nd wire to reduce throat diameter.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- === TEST 3: C♯, C, B === -->
+      <article class="test" id="T03">
+        <div class="card">
+          <h2>Test 3: C♯, C, and B <span class="badge">T03</span></h2>
+          <h3>3.1 / 3.2: Pitch Centering and Ear Plug Test</h3>
+          <ol>
+            <li>Play C♯ with a full tone.</li>
+            <li>Without adjusting, check the pitch on the tuner.</li>
+            <li>Repeat with C and B.</li>
+            <li>Make necessary adjustments below.</li>
+            <li>Use Ear Plug Test for C and C♯.</li>
+          </ol>
+          <div class="actions">
+            <button class="pass"  onclick="nextTest('T03')">Pass → Next Test</button>
+            <button class="issue" onclick="toggleDetails('T03_details')">Issue → Show Solutions</button>
+            <button class="link"  onclick="prevTest('T03')">← Back to Previous Test</button>
+          </div>
+          <div class="details" id="T03_details">
+            <h3>IF FLAT or unstable:</h3>
+            <ul>
+              <li>Check for undersized or dirty B, C, and C♯ tone holes.</li>
+              <li>Ream for deeper bocal penetration (8–10mm).</li>
+              <li>Adjust wires for more blade strength: 2S/1S.</li>
+              <li>Thin and taper in the purple shaded area from c to a at the outside edge of the Delta (Fig. 3A).</li>
+            </ul>
+            <h3>IF SHARP, or rises with articulation:</h3>
+            <ul>
+              <li>Adjust wires: 1T/2T.</li>
+              <li>Back the reed slightly off the bocal. If improved, consider putting a wire behind binding at butt of reed for less bocal penetration.</li>
+              <li>Scrape an “X” in the red shaded area between d‑a and c‑f. Tip: draw the X on the reed with pencil then scrape off pencil marks.</li>
+              <li>If still sharp, extend and widen scrape along line c‑f (Fig. 3B).</li>
+              <li>For B, scrape from b to i and/or h to i (Fig. 4A).</li>
+              <li>Check the B tone hole diameter by temporarily inserting a short section of large plastic straw into the tone hole. Recheck pitch; if improved, insert tape or glue straw in place.</li>
+              <li>Some narrow reed shapes can negatively affect tuning of B/C.</li>
+            </ul>
+            <h3>3.3: Stability</h3>
+            <ol>
+              <li>While watching the tuner, play the examples, checking for pitch stability. Also check B.</li>
+              <li>Make necessary adjustments.</li>
+            </ol>
+          </div>
+        </div>
+      </article>
+
+      <!-- === TEST 4: B♭, A, A♭, G, F♯ === -->
+      <article class="test" id="T04">
+        <div class="card">
+          <h2>Test 4: B♭, A, A♭, G, and F♯ <span class="badge">T04</span></h2>
+
+          <h3>4.1: Pitch Centering using A♭–B♭ Trill</h3>
+          <ol>
+            <li>Play the test notes using the trill fingering: whisper key + 123,123 + A♭ key and trill the RH 2nd finger.</li>
+            <li>Make necessary adjustments below.</li>
+          </ol>
+          <p><em>Note:</em> The sound of the B♭ trill is normally foggy.</p>
+          <p><strong>Cross‑Check:</strong> Fine tuning in Test 4 is affected by Fork E♭ (Test 2) and tuning of Fork B♭ (Test 11).</p>
+
+          <h3>4.2: Pad Height / Pitch Centering: F, G, and A</h3>
+          <ol>
+            <li>Play the test notes with a tuner comparing the pitch position of the target note with its neighboring notes.</li>
+            <li>Does the pitch of the target note center between its upper and lower neighbors?</li>
+            <li>Make adjustments below.</li>
+          </ol>
+
+          <div class="actions">
+            <button class="pass"  onclick="nextTest('T04')">Pass → Next Test</button>
+            <button class="issue" onclick="toggleDetails('T04_details')">Issue → Show Solutions</button>
+            <button class="link"  onclick="prevTest('T04')">← Back to Previous Test</button>
+          </div>
+
+          <div class="actions">
+            <button class="link" onclick="goToRef('T04','T02')">Go to T02 (Fork E♭)</button>
+            <button class="link" onclick="goToRef('T04','T11')">Go to T11 (Fork B♭)</button>
+          </div>
+
+          <div class="details" id="T04_details">
+            <h3>IF SHARP, unstable, or produces split tone:</h3>
+            <ul>
+              <li>Scrape mini channels from h to i (Fig. 4A) across the tip and into the plaque.</li>
+              <li>If more is needed for B♭ and A: scrape from b to i (the B scrape) (Fig. 4A).</li>
+            </ul>
+            <h3>IF FLAT or foggy on trill:</h3>
+            <ul>
+              <li>Add the Low D♭ key.</li>
+            </ul>
+            <hr/>
+            <h4>Pad Height / Pitch Centering fixes</h4>
+            <h5>IF SHARP on the target note:</h5>
+            <ul>
+              <li>If quite sharp on F, check/adjust F and E in Test 5.</li>
+              <li>Lower pad height. Temporarily insert layers of paper shims under key/pad stops. If improved, replace with correct sticky note thickness. If pad is too low, a “hiss” may be heard.</li>
+            </ul>
+            <h5>IF FLAT:</h5>
+            <ul>
+              <li>For F♯ and G: Flip the reed, opposite blade up.</li>
+              <li>For G (and F): Ream for deeper bocal penetration (and check balance with C’s tuning, Test 3).</li>
+              <li>Raise pad height: insert sandpaper under felt/cork key stops; press firmly while pulling out sandpaper.</li>
+              <li>For G (and F♯) scrape in G zone (Fig. 5C).</li>
+              <li>For more pitch flexibility, check Tests 4.1 and 11.1.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- === TEST 5: Low F, E, E♭, D === -->
+      <article class="test" id="T05">
+        <div class="card">
+          <h2>Test 5: Low F, E, E♭, D <span class="badge">T05</span></h2>
+          <h3>5.1: Pitch Centering</h3>
+          <ol>
+            <li>Slur down loudly to Low F, E, E♭, and D.</li>
+            <li>Check each test note’s pitch on the tuner.</li>
+          </ol>
+          <div class="actions">
+            <button class="pass"  onclick="nextTest('T05')">Pass → Next Test</button>
+            <button class="issue" onclick="toggleDetails('T05_details')">Issue → Show Solutions</button>
+            <button class="link"  onclick="prevTest('T05')">← Back to Previous Test</button>
+          </div>
+          <div class="details" id="T05_details">
+            <h3>IF SHARP on low (test) notes:</h3>
+            <ul>
+              <li>Adjust wires: 2T or 1T/2T.</li>
+              <li>Notch a “cradle” under 1st wire: slide 1st wire toward 2nd wire, file 3 notches with a small needle file (round/triangular), slide 1st wire into the cradle (Fig. 5A).</li>
+              <li>Square the shoulder (collar → blade transition) to a right‑angle “step” by filing from t to t (Fig. 5B).</li>
+              <li>General pitch lowering: back‑scrape or sand across back Vs up to the step/shoulder (t‑t) from z‑z, or forward scrape t‑t → z‑z (Fig. 5B).</li>
+              <li>Target tuning: scrape in the note’s zone (Fig. 5C).</li>
+              <li>If more is needed, see collar adjustment in Test 6.</li>
+              <li>Check pad heights. If E♭ pitch is significantly sharper than D, the E♭ pad height is too high.</li>
+            </ul>
+            <h3>IF FLAT:</h3>
+            <ul>
+              <li>Check pad height for affected note.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- === TEST 6: D♭, C, B, B♭ === -->
+      <article class="test" id="T06">
+        <div class="card">
+          <h2>Test 6: D♭, C, B, and B♭ <span class="badge">T06</span></h2>
+          <h3>6.1: Pitch Centering</h3>
+          <ol>
+            <li>Slur down loudly to Low D♭, C, B, and B♭. D♭→A♭→D♭, C→G→C, B→F♯→B, B♭→F→B♭, D♭→A♭→D♭.</li>
+            <li>Check each test note’s pitch on the tuner.</li>
+          </ol>
+          <div class="actions">
+            <button class="pass"  onclick="nextTest('T06')">Pass → Next Test</button>
+            <button class="issue" onclick="toggleDetails('T06_details')">Issue → Show Solutions</button>
+            <button class="link"  onclick="prevTest('T06')">← Back to Previous Test</button>
+          </div>
+          <div class="details" id="T06_details">
+            <h3>IF SHARP on Test 6 notes but Test 5 notes are in tune:</h3>
+            <ul>
+              <li>Narrow the collar (t‑u) by removing bark and cane from t‑t toward u‑u, effectively lengthening the blade. If more is needed, remove cane up to the 1st wire. (Primary tuning area for D♭ → Low B♭.)</li>
+              <li>If D♭ pitch is significantly sharper than C, the D♭ pad height is too high.</li>
+            </ul>
+            <h3>IF FLAT:</h3>
+            <ul>
+              <li>Adjust wires to close the tip opening: 1T and/or 2S.</li>
+              <li>Raise pad height(s).</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- === TEST 7: Low Register Articulation === -->
+      <article class="test" id="T07">
+        <div class="card">
+          <h2>Test 7: Low Register Articulation <span class="badge">T07</span></h2>
+          <h3>7.1: Response to Articulation</h3>
+          <ol>
+            <li>Articulate rapid 16th notes in pianissimo: F→E→D→C→B→B♭.</li>
+            <li>Make necessary adjustments below.</li>
+          </ol>
+          <div class="actions">
+            <button class="pass"  onclick="nextTest('T07')">Pass → Next Test</button>
+            <button class="issue" onclick="toggleDetails('T07_details')">Issue → Show Solutions</button>
+            <button class="link"  onclick="prevTest('T07')">← Back to Previous Test</button>
+          </div>
+          <div class="details" id="T07_details">
+            <h3>IF RESPONSE is sluggish or difficult:</h3>
+            <ul>
+              <li>Move embouchure toward tip of reed.</li>
+              <li>Check for complete closure of whisper key at bocal.</li>
+              <li>Check for easy and complete closure of the Low E (Pancake) key.</li>
+              <li>Check if the Low C key completely closes the D pad, and Low B key closes Low C.</li>
+              <li>Adjust wires: 2T or 1T/2T.</li>
+              <li>Thin and taper the tip areas e‑e to f‑f.</li>
+              <li>Thin and taper from d toward f, starting near the tip and working back toward d as needed.</li>
+            </ul>
+            <blockquote>Response test (after all 7 tests pass): Play the F major scale descending from open F to low B♭ with light, short staccato articulation checking for equal response. Also test descending chromatically, and with repeated articulation. If notes do not speak equally, revisit tests.</blockquote>
+          </div>
+        </div>
+      </article>
+
+      <!-- === TEST 8: Harmonic F♯, G, A♭ === -->
+      <article class="test" id="T08">
+        <div class="card">
+          <h2>Test 8: F♯, G, and A♭ – Harmonic Tuning <span class="badge">T08</span></h2>
+          <h3>8.1: Harmonic Tuning</h3>
+          <ol>
+            <li>With tuner, slur between standard fingering and harmonic fingering (whisper lock may help).</li>
+            <li>Harmonic fingerings:
+              <ul>
+                <li>F♯2: add Low E, D, C, and B keys to the F♯ fingering</li>
+                <li>G2: add Low E, D, C, and B keys to the G fingering without the LH pinky</li>
+                <li>A2: add Low E, D, C, and B keys with a half hole, LH pinky, and an F key instead of an A♭ key</li>
+              </ul>
+            </li>
+            <li>Repeat for each note.</li>
+          </ol>
+          <div class="actions">
+            <button class="pass"  onclick="nextTest('T08')">Pass → Next Test</button>
+            <button class="issue" onclick="toggleDetails('T08_details')">Issue → Show Solutions</button>
+            <button class="link"  onclick="prevTest('T08')">← Back to Previous Test</button>
+          </div>
+          <div class="details" id="T08_details">
+            <h3>IF FLAT on harmonic:</h3>
+            <ul>
+              <li>Sand the rails in the General Pitch Raising zone. If more is needed, sand the full length of the blade to narrow the shape.</li>
+              <li>File from d to f; re‑test lower neighboring notes (F and E) from Test 1.</li>
+            </ul>
+            <h3>IF SHARP on harmonic:</h3>
+            <ul>
+              <li>Using a forward scrape, remove cane in the note’s channel zone until the pitch of the harmonic note drops. Scrape through the zone(s) into the plaque.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- === TEST 9: Harmonic A & B♭ === -->
+      <article class="test" id="T09">
+        <div class="card">
+          <h2>Test 9: Tuning A and B♭ – Harmonic Check <span class="badge">T09</span></h2>
+          <h3>9.1: Harmonic Tuning</h3>
+          <ol>
+            <li>Hold down the A/B♭ register/speaker key with the standard fingering. (If Low C key lowers accidentally, prop the speaker key open with a folded paper shim.)</li>
+            <li>Slur between standard and harmonic while watching the tuner.
+              <ul>
+                <li>A2 harmonic: low F + low E + low D + <strong>high A</strong> key</li>
+                <li>B♭ harmonic: low F + low E + low D + <strong>high A</strong> + <strong>low D♭</strong> key</li>
+              </ul>
+            </li>
+            <li>Repeat for each note.</li>
+          </ol>
+          <div class="actions">
+            <button class="pass"  onclick="nextTest('T09')">Pass → Next Test</button>
+            <button class="issue" onclick="toggleDetails('T09_details')">Issue → Show Solutions</button>
+            <button class="link"  onclick="prevTest('T09')">← Back to Previous Test</button>
+          </div>
+          <div class="details" id="T09_details">
+            <h3>IF FLAT on harmonic:</h3>
+            <ul>
+              <li>File at the zone for A/B♭ along the rails.</li>
+              <li>Adjust wires: 2S/1S.</li>
+              <li>Sand at the rails in the General Pitch Raising zone.</li>
+            </ul>
+            <h3>IF SHARP on harmonic:</h3>
+            <ul>
+              <li>Using a forward scrape, deepen the A/B♭ channel zone until the pitch of the harmonic note drops.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- === TEST 10: Double‑Sensitive B & C === -->
+      <article class="test" id="T10">
+        <div class="card">
+          <h2>Test 10: Double‑Sensitive Notes B and C (and B♭) <span class="badge">T10</span></h2>
+          <h3>10.1: Harmonic Tuning</h3>
+          <ol>
+            <li>Hold down the B/C register/speaker key with the standard fingering.</li>
+            <li>Slur between standard and harmonic, comparing pitch:
+              <ul>
+                <li>B3 harmonic: low F + high C key + Pancake key</li>
+                <li>C4 harmonic: low F + high C key</li>
+              </ul>
+            </li>
+            <li>Repeat for each note.</li>
+          </ol>
+          <h3>10.2: C Ear Plug Test</h3>
+          <ol>
+            <li>Hold C exactly in tune.</li>
+            <li>Plug the right ear‑flap; note if the pitch/tone shifts sharp/bright or flat/dull.</li>
+          </ol>
+          <div class="actions">
+            <button class="pass"  onclick="nextTest('T10')">Pass → Next Test</button>
+            <button class="issue" onclick="toggleDetails('T10_details')">Issue → Show Solutions</button>
+            <button class="link"  onclick="prevTest('T10')">← Back to Previous Test</button>
+          </div>
+          <div class="details" id="T10_details">
+            <h3>IF FLAT on harmonic or Ear Plug Test:</h3>
+            <ul>
+              <li>File at the test note’s zone along the rails.</li>
+              <li>With blades separated by plaque, check for even rail thickness and taper. Correct by removing plaque and sanding along the thinnest point(s) of the rail.</li>
+            </ul>
+            <h3>IF SHARP on harmonic or Ear Plug Test:</h3>
+            <ul>
+              <li>For B harmonic tuning, see Test 1 adjustment point for E (Fig. 1D).</li>
+              <li>For C harmonic tuning, expand the wings toward d (Test 2 adjustment, Fig. 2A). Avoid removing too much cane (dip) at point d at the rails.</li>
+              <li>Balance the channel taper in the note’s secondary tuning point (Fig. A) for better response.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- === TEST 11: Fork B♭ === -->
+      <article class="test" id="T11">
+        <div class="card">
+          <h2>Test 11: Fork B♭ <span class="badge">T11</span></h2>
+          <p><strong>Cross Check:</strong> The success of Fork B♭ also relies on A♭/B♭ trill (Test 4) and Fork E♭ (Test 2).</p>
+          <h3>11.1: Fork B♭ Tuning</h3>
+          <ol>
+            <li>With tuner, slur between standard fingering and the fork fingering (without holding the register/speaker key), comparing pitch.</li>
+            <li>Fork B♭ fingering: play low G and lift up the 2nd finger in the right hand.</li>
+          </ol>
+          <div class="actions">
+            <button class="pass"  onclick="nextTest('T11')">Pass → Next Test</button>
+            <button class="issue" onclick="toggleDetails('T11_details')">Issue → Show Solutions</button>
+            <button class="link"  onclick="prevTest('T11')">← Back to Previous Test</button>
+          </div>
+          <div class="actions">
+            <button class="link" onclick="goToRef('T11','T02')">Go to T02 (Fork E♭)</button>
+            <button class="link" onclick="goToRef('T11','T04')">Go to T04 (A♭–B♭ Trill)</button>
+            <button class="link" onclick="goToRef('T11','T09')">Go to T09 (A/B♭ Harmonic)</button>
+          </div>
+          <div class="details" id="T11_details">
+            <h3>IF FLAT or unstable on Fork:</h3>
+            <ul>
+              <li>Retest tuning for A and B♭ (Test 9).</li>
+            </ul>
+            <h3>IF SHARP, wild, or pops up in pitch on Fork:</h3>
+            <ul>
+              <li>Scrape through the mini channels (Fig. A).</li>
+              <li>Lengthen, widen, or angle the mini channel scrape (Fig. 4A).</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- === TEST 12: C♯, D, E♭ === -->
+      <article class="test" id="T12">
+        <div class="card">
+          <h2>Test 12: C♯, D, and E♭ <span class="badge">T12</span></h2>
+          <h3>12.1: Harmonic Tuning</h3>
+          <ol>
+            <li>Slur between standard (Short C♯ and D) and harmonic fingerings, comparing pitch. (Avoid accidental LH half‑hole on harmonic E.)</li>
+            <li>Harmonic C♯3: low F♯ (no LH half‑hole) + RH 1st‑finger half‑hole</li>
+            <li>E♭ harmonic: low G + RH 1st‑finger half‑hole</li>
+            <li>Alternate E♭ harmonic: low A♭ + LH 1st‑finger half‑hole</li>
+            <li>Repeat for each note.</li>
+          </ol>
+          <h3>12.2: Long C♯ and D Tuning</h3>
+          <ol>
+            <li>Slur and compare standard → harmonic → long fingerings for each note.</li>
+            <li>Long C3: low F; remove RH 1st finger; add C♯ key.</li>
+            <li>Long D3: low F; remove LH 3rd finger and RH 1st finger.</li>
+          </ol>
+          <h3>12.3: Ear Plug Test (Short C♯ & D)</h3>
+          <ol>
+            <li>Hold the test note exactly in tune.</li>
+            <li>Plug the right ear‑flap; note if sharp/bright or flat/dull.</li>
+          </ol>
+          <div class="actions">
+            <button class="pass"  onclick="nextTest('T12')">Pass → Next Test</button>
+            <button class="issue" onclick="toggleDetails('T12_details')">Issue → Show Solutions</button>
+            <button class="link"  onclick="prevTest('T12')">← Back to Previous Test</button>
+          </div>
+          <div class="actions">
+            <button class="link" onclick="goToRef('T12','T10')">Go to T10 (Double‑Sensitive B/C)</button>
+            <button class="link" onclick="goToRef('T12','T05')">Go to T05 (Low F–D)</button>
+            <button class="link" onclick="goToRef('T12','T06')">Go to T06 (Collar)</button>
+          </div>
+          <div class="details" id="T12_details">
+            <h3>IF FLAT on ear or harmonic tests:</h3>
+            <ul><li>Adjust wires: 2S/1S.</li></ul>
+            <h3>IF SHARP on harmonic or long fingering:</h3>
+            <ul><li>Forward scrape deepening the note’s channel zone (Fig. A) until harmonic/long pitch drops to match standard.</li></ul>
+            <h3>IF SHARP on harmonic but FLAT on standard fingering (D and E):</h3>
+            <ul>
+              <li>Scrape in the note’s channel zone, and into the adjacent spine zone as well as the note’s zone at the rails. Back and forth adjustments are usually necessary.</li>
+              <li>For D, lower pancake (Low E) pad height.</li>
+              <li>Add 1″ wide tape inside the long joint’s small tenon in layers around the bore circumference.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- === TEST 13: Alternate E, F, F♯ === -->
+      <article class="test" id="T13">
+        <div class="card">
+          <h2>Test 13: E, F and F♯ <span class="badge">T13</span></h2>
+          <h3>13.1: Alternate Fingering Tunings</h3>
+          <ol>
+            <li>Slur between standard and alternate fingering, comparing pitch.</li>
+            <li>French E3: low A♭; take LH 3rd finger off.</li>
+            <li>Alternate F3: play A; take LH 1st finger off; add LH register key.</li>
+            <li>Standard F3: low F; add whisper key + LH register key + LH 1st‑finger half‑hole.</li>
+            <li>Alternate F♯3: play B♭; add whisper key + LH register key + LH 1st‑finger half‑hole.</li>
+          </ol>
+          <div class="actions">
+            <button class="pass"  onclick="nextTest('T13')">Pass → Next Test</button>
+            <button class="issue" onclick="toggleDetails('T13_details')">Issue → Show Solutions</button>
+            <button class="link"  onclick="prevTest('T13')">← Back to Previous Test</button>
+          </div>
+          <div class="details" id="T13_details">
+            <h3>IF FLAT on alternate fingerings:</h3>
+            <ul>
+              <li>For E: scrape in the note’s channel zone and/or into the spine zone (Fig. A). Back and forth adjustments may be necessary between channel, spine, and rail zones.</li>
+              <li>For F and F♯: file at the F/F♯ zones along the rails (Fig. B).</li>
+              <li>For F♯: If alternate is extremely flat, clip the tip.</li>
+            </ul>
+            <h3>IF SHARP on standard or alternate fingerings:</h3>
+            <ul>
+              <li>For F and F♯: scrape in the note’s channel zone and/or into the spine zone (Fig. A). For fine tuning, back and forth adjustments may be necessary between channel, spine, and rail zones.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- === TEST 14: Slur‑Ups === -->
+      <article class="test" id="T14">
+        <div class="card">
+          <h2>Test 14: Slur‑Ups <span class="badge">T14</span></h2>
+        <h3>14.1: Slurring Across Break</h3>
+          <ol>
+            <li>Slur up to C from F, E, and D without flicking the register/speaker key.</li>
+            <li>Check for quick and clean response.</li>
+          </ol>
+          <p><em>Picking a Reed:</em> Reeds that pass 14.1 are better candidates for good middle‑register reeds: quick response with clear articulation. An additional indicator for a good reed is test 18.1, slurring up to High C. The very best reeds do well on both slur‑up tests.</p>
+          <h3>14.2: Slurring Minor 6ths</h3>
+          <ol>
+            <li>Slur up a minor 6th to each note: F♯→D, G→E♭, G♯→E, A→F, A♯→F♯.</li>
+            <li>Check for solid pitch/resonance on upper notes, with enough pitch flexibility for “just intonation”.</li>
+          </ol>
+          <div class="actions">
+            <button class="pass"  onclick="nextTest('T14')">Pass → Next Test</button>
+            <button class="issue" onclick="toggleDetails('T14_details')">Issue → Show Solutions</button>
+            <button class="link"  onclick="prevTest('T14')">← Back to Previous Test</button>
+          </div>
+          <div class="actions">
+            <button class="link" onclick="goToRef('T14','T10')">Go to T10</button>
+            <button class="link" onclick="goToRef('T14','T12')">Go to T12</button>
+            <button class="link" onclick="goToRef('T14','T13')">Go to T13</button>
+          </div>
+          <div class="details" id="T14_details">
+            <h3>Slur‑Up Solutions — IF NOTES HESITATE:</h3>
+            <ul>
+              <li>Adjust wires to increase blade strength: 2S/1S.</li>
+              <li>Shorten vibrating length by clipping the tip.</li>
+              <li>Try harder, more resilient cane.</li>
+              <li>Cross‑check all harmonic tests, especially C Harmonic (Test 10).</li>
+              <li>Increase air speed going to the upper note; change vowel from “ah” (open) to “oo” (more closed) inside mouth.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- === TEST 15: Articulation & Croaking === -->
+      <article class="test" id="T15">
+        <div class="card">
+          <h2>Test 15: Articulation and Croaking <span class="badge">T15</span></h2>
+          <h3>15.1: Clean Attack</h3>
+          <p>Softly start these notes without register/speaker keys. They should speak equally without distortion (“kak”) at the initial attack, with focused tone: A→A → B♭→B♭ → B→B → C→C.</p>
+          <h3>15.2: Rapid, Clear Articulation</h3>
+          <p>Play as softly as possible with rapid repeated staccato articulation, without register/speaker keys. They should respond equally without croaking, split octave, or popping down.</p>
+          <p>Play 4 sixteenths per note: A → B♭ → B → C.</p>
+          <div class="actions">
+            <button class="pass"  onclick="nextTest('T15')">Pass → Next Test</button>
+            <button class="issue" onclick="toggleDetails('T15_details')">Issue → Show Solutions</button>
+            <button class="link"  onclick="prevTest('T15')">← Back to Previous Test</button>
+          </div>
+          <div class="actions">
+            <button class="link" onclick="goToRef('T15','T07')">Go to T07</button>
+            <button class="link" onclick="goToRef('T15','T12')">Go to T12</button>
+            <button class="link" onclick="goToRef('T15','T13')">Go to T13</button>
+            <button class="link" onclick="goToRef('T15','T01')">Go to T01</button>
+          </div>
+          <div class="details" id="T15_details">
+            <h3>Articulation and Croaking Solutions</h3>
+            <h4>IF ATTACK is fuzzy, uneven, unclear, or split tone:</h4>
+            <ul>
+              <li>Clean the bocal “button” vent; try other bocals.</li>
+              <li>Adjust wires: 2S/1S.</li>
+              <li>Correct tip irregularities: balance tip taper (Fig. 1E); correct dip behind tip (Fig. 1F); balance corners (twist test) (Fig. 2B).</li>
+              <li>Correct structural imbalances by sanding: off‑center spine; uneven channel tapers; uneven rail tapers; off‑center tip opening/closure (see Test 2).</li>
+              <li>Shorten blade/vibrating length: clip and re‑scrape the tip.</li>
+              <li>Player: use higher, more closed vowel (“git”); faster, more focused air stream.</li>
+            </ul>
+            <blockquote>Final response test (must pass before further tests): Play the example with light air puffs, with and without tongued articulation. If notes do not speak equally, revisit tests. Example: F♯ eighth note then eighth rest, repeated descending to F.</blockquote>
+          </div>
+        </div>
+      </article>
+
+      <!-- === TEST 16: Harmonic G & A♭ === -->
+      <article class="test" id="T16">
+        <div class="card">
+          <h2>Test 16: G and A♭ – Harmonic Tuning <span class="badge">T16</span></h2>
+          <h3>16.1: Harmonic Tuning</h3>
+          <ol>
+            <li>Slur between standard and harmonic fingering, comparing pitch.</li>
+            <li>Harmonic G3: finger G; remove the right hand.</li>
+            <li>Harmonic A♭: finger G without the right hand; add the right hand’s upper key near RH 1st finger and the B♭ key.</li>
+            <li>Repeat for each note.</li>
+          </ol>
+          <div class="actions">
+            <button class="pass"  onclick="nextTest('T16')">Pass → Next Test</button>
+            <button class="issue" onclick="toggleDetails('T16_details')">Issue → Show Solutions</button>
+            <button class="link"  onclick="prevTest('T16')">← Back to Previous Test</button>
+          </div>
+          <div class="actions">
+            <button class="link" onclick="goToRef('T16','T13')">Go to T13</button>
+            <button class="link" onclick="goToRef('T16','T15')">Go to T15</button>
+          </div>
+          <div class="details" id="T16_details">
+            <h3>IF FLAT on harmonic:</h3>
+            <ul>
+              <li>Carefully sand along the High‑G rail zone at/near the tip, narrowing the tip opening and thickening the rails (Fig. B & Fig. 16).</li>
+              <li>Back‑and‑forth adjustments are common from channel zone to rail.</li>
+              <li>If harmonic G is extremely flat (and alternate F♯ in Test 13.1), clip the tip if previous adjustments fail.</li>
+            </ul>
+            <h3>IF SHARP or unstable on harmonic:</h3>
+            <ul>
+              <li>Scrape in the note’s channel zone and/or into the spine zone (Fig. A).</li>
+              <li>To help fine tune and center G, try standard G fingering but with LH 2nd finger only.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- === TEST 17: One‑Handed Slurs === -->
+      <article class="test" id="T17">
+        <div class="card">
+          <h2>Test 17: A, B♭, B, and C – One‑Handed Slurs <span class="badge">T17</span></h2>
+          <h3>17.1: One‑Handed Slurs</h3>
+          <ol>
+            <li>Play A to C and back (slurred) using the short fingerings (no right hand). These notes should speak.</li>
+            <li>Make adjustments found in Solutions for Upper Register Tunings in Test 19.</li>
+          </ol>
+          <div class="actions">
+            <button class="pass"  onclick="nextTest('T17')">Pass → Next Test</button>
+            <button class="issue" onclick="toggleDetails('T17_details')">Issue → Show Note</button>
+            <button class="link"  onclick="prevTest('T17')">← Back to Previous Test</button>
+          </div>
+          <div class="actions">
+            <button class="link" onclick="goToRef('T17','T19')">Go to T19 (Upper Register Tunings)</button>
+          </div>
+          <div class="details" id="T17_details">
+            <p>Apply solutions from <strong>Test 19</strong> if one‑handed slurs fail.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- === TEST 18: High‑Register Slur‑Ups === -->
+      <article class="test" id="T18">
+        <div class="card">
+          <h2>Test 18: C, C♯, D, E♭, and E – High‑Register Slur‑Ups <span class="badge">T18</span></h2>
+          <h3>18.1: Slur Up to C, D, E♭ and F</h3>
+          <ol>
+            <li>Slur up to the short fingering for these notes, checking for pitch and ease of response. Do not force the note to speak.</li>
+            <li>Exercise: slur lower octave to upper.</li>
+            <li>Short fingerings:
+              <ul>
+                <li>Short C: 1st finger with the high C key, no register key</li>
+                <li>Short D: 3rd finger plus register key and high D key</li>
+                <li>Short E♭: 1st three fingers with a half hole on the 1st finger as well as the C♯ key, no register key</li>
+              </ul>
+            </li>
+            <li>Make adjustments found in Solutions for Upper Register Tunings found in Test 19.</li>
+          </ol>
+          <div class="actions">
+            <button class="pass"  onclick="nextTest('T18')">Pass → Next Test</button>
+            <button class="issue" onclick="toggleDetails('T18_details')">Issue → Show Note</button>
+            <button class="link"  onclick="prevTest('T18')">← Back to Previous Test</button>
+          </div>
+          <div class="actions">
+            <button class="link" onclick="goToRef('T18','T19')">Go to T19 (Upper Register Tunings)</button>
+          </div>
+          <div class="details" id="T18_details">
+            <p>Apply solutions from <strong>Test 19</strong> if high‑register slur‑ups fail.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- === TEST 19: Upper Register Tunings === -->
+      <article class="test" id="T19">
+        <div class="card">
+          <h2>Test 19: Upper Register Tunings <span class="badge">T19</span></h2>
+          <h3>19.1: Articulation – Finger A♭ with F</h3>
+          <ol>
+            <li>Play chromatically from High G up to High E with soft and/or repeated articulation (whisper key). Check ease of response.</li>
+            <li>Make adjustments below.</li>
+          </ol>
+          <div class="actions">
+            <button class="pass"  onclick="nextTest('T19')">Pass → Next Test</button>
+            <button class="issue" onclick="toggleDetails('T19_details')">Issue → Show Solutions</button>
+            <button class="link"  onclick="prevTest('T19')">← Back to Previous Test</button>
+          </div>
+          <div class="details" id="T19_details">
+            <h3>IF SHARP:</h3>
+            <ul>
+              <li>Ensure complete tuning of Test 16 (Harmonic G/A♭) and Test 13 (especially F).</li>
+              <li>Increase air speed and pressure on upper blade; move embouchure toward first wire; use a more open vowel (“who”).</li>
+            </ul>
+            <h3>IF FLAT, doesn’t slur up, or has a grace note:</h3>
+            <ul>
+              <li>Use harder cane and/or adjust wires 2S/1S.</li>
+              <li>Increase air speed and roll lip inward; use a more closed vowel (“eek”).</li>
+              <li>Narrow the reed shape and increase rail thickness near tip by sanding/filing from d to f (Fig. 1A).</li>
+              <li>Clip the tip to shorten vibrating length.</li>
+            </ul>
+            <h3>Articulation/Response — IF ATTACK or SLUR UP is unresponsive or unclear:</h3>
+            <ul>
+              <li>Check for clogged High A/B, B/C, and D register key vent holes; check High E3/E tone holes.</li>
+              <li>Use an initial blade profile with a thicker back third than your normal measurement.</li>
+              <li>More reed in mouth, or engage more “oblique” embouchure (R‑L shift) a la “Pezzi Twist.”</li>
+              <li>Use the highest possible “eek” vowel, as if singing the target note in falsetto.</li>
+              <li>Thicken the rail and/or cut a steeper taper from e to f (Rail Chisel Trim). Narrow the tip aperture (more dramatic corner cut, moving f closer to center).</li>
+              <li><strong>Extreme high register:</strong> Drill a very small vent hole (#76 to #67, 0.020–0.030 inches / 0.5–0.8mm) in middle of tube next to the 2nd wire (on the playing blade side), or drill a vent hole in the top of the bocal just beyond the reed.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- === TEST 20: Final Tests === -->
+      <article class="test" id="T20">
+        <div class="card">
+          <h2>Test 20: The Final Tests – Whole‑Range Validation <span class="badge">T20</span></h2>
+          <p>With the reed in the corner of your mouth, can you play the entire range of the bassoon? The following help evaluate balanced tuning and response in all registers.</p>
+          <h3>Test A</h3>
+          <p>Do not use whisper key; lift RH 2nd finger for A♭ trill key and lift.</p>
+          <h3>Test B</h3>
+          <p>Use bare fork B♭ and E♭. Do not use the whisper key or flick.</p>
+          <h3>Test C</h3>
+          <p>Finger A♭ with F key (RH). Slur to B♭ without register key. No whisper key on G.</p>
+          <p>See also Final Response Test in Test 7 and Test 15, and Articulation Test in Test 19.</p>
+          <div class="actions">
+            <button class="pass"  onclick="alert('All final tests passed → Concert‑ready!')">Pass → Finish</button>
+            <button class="issue" onclick="toggleDetails('T20_details')">Issue → Show Guidance</button>
+            <button class="link"  onclick="prevTest('T20')">← Back to Previous Test</button>
+          </div>
+          <div class="actions">
+            <button class="link" onclick="goToRef('T20','T07')">Go to T07</button>
+            <button class="link" onclick="goToRef('T20','T15')">Go to T15</button>
+            <button class="link" onclick="goToRef('T20','T19')">Go to T19</button>
+          </div>
+          <div class="details" id="T20_details">
+            <p>If any final test fails, use the cross‑reference buttons above to jump directly to the relevant test page and back.</p>
+          </div>
+        </div>
+      </article>
+
+    </section>
+  </main>
+</body>
+</html>
