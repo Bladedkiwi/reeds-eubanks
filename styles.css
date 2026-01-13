@@ -104,8 +104,151 @@ button.link  { background: #27374a; border-color: #3a506b; }
 .details { display: none; margin-top: 10px; }
 .details.show { display: block; }
 
+
+/* === Figures grid === */
+.fig-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+.fig-grid figure {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px;
+}
+.fig-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  cursor: zoom-in;
+}
+.fig-grid figcaption {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+
+
+/* === Image Zoom Modal === */
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,.7);
+  z-index: 1000;
+}
+.modal.show { display: flex; }
+
+/* stage holds the image and receives outside-clicks to close */
+.modal-stage {
+  position: relative;
+  max-width: min(95vw, 1100px);
+  max-height: 85vh;
+  overflow: hidden;          /* allows internal panning */
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  box-shadow: 0 8px 24px rgba(0,0,0,.4);
+}
+
+/* the image we zoom/pan */
+#figModalImg {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  transform-origin: center center;
+  will-change: transform;
+  cursor: zoom-in;
+}
+
+/* close button */
+.modal-close {
+  position: absolute;
+  top: 8px; right: 8px;
+  background: #0f1c22;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  width: 36px; height: 36px;
+  font-size: 20px; line-height: 32px;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* prevent background scroll when modal is open */
+body.modal-open { overflow: hidden; }
+
+/* mobile: keep it comfy */
+@media (max-width: 600px) {
+  .modal-stage { max-width: 96vw; max-height: 80vh; }
+  #figModalImg { cursor: zoom-in; }
+}
+
+
+/* === Figure modal === */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.65);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+.modal.show { display: flex; }
+.modal img {
+  max-width: min(90vw, 1000px);
+  max-height: 85vh;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+}
+
+
 /* Mobile */
 @media (max-width: 900px) {
   .layout { grid-template-columns: 1fr; }
   .sidebar { position: sticky; top: 0; z-index: 2; }
+}
+
+
+
+/* === Responsive sizing for subsection grid figures (examples & fingerings) === */
+:root {
+  /* Tunable caps for image widths */
+  --sub-ex-max: 360px;    /* exercises default max width */
+  --sub-fing-max: 300px;  /* fingerings default max width */
+  --sub-figs-min: 180px;  /* min column width in grid */
+}
+
+/* Use smaller columns so images never dominate */
+.sub-figs { grid-template-columns: repeat(auto-fill, minmax(var(--sub-figs-min), 1fr)); }
+
+/* Bound each figure and center within its grid cell */
+.sub-figs .section-media { max-width: 100%; margin: 0 auto; padding: 6px; }
+.sub-figs .section-media.ex   { max-width: var(--sub-ex-max); }
+.sub-figs .section-media.fing { max-width: var(--sub-fing-max); }
+
+/* Slightly smaller captions for mobile-style readability */
+.sub-figs figcaption { font-size: 11px; }
+
+/* Tablet: tighten caps a bit */
+@media (max-width: 900px) {
+  :root { --sub-ex-max: 320px; --sub-fing-max: 260px; --sub-figs-min: 160px; }
+}
+
+/* Phone: shrink further */
+@media (max-width: 600px) {
+  :root { --sub-ex-max: 260px; --sub-fing-max: 220px; --sub-figs-min: 150px; }
+}
+
+/* Small phones: tight caps */
+@media (max-width: 420px) {
+  :root { --sub-ex-max: 220px; --sub-fing-max: 200px; --sub-figs-min: 140px; }
+  .sub-figs figcaption { font-size: 10px; }
 }

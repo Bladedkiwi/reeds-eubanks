@@ -22,7 +22,8 @@
       </div>
 
       <!-- Tabs: update titles here if you want -->
-      <button class="tab" id="tab-Intro"  onclick="openTest('Intro')">GETTING STARTED</button>
+      <button class="tab" id="tab-Intro" onclick="openTest('Intro')">GETTING STARTED</button>
+      <button class="tab" id="tab-PT" onclick="openTest('PT')">Preliminary Tuning</button>
       <button class="tab" id="tab-T01"   onclick="openTest('T01')">Test 1: F and E</button>
       <button class="tab" id="tab-T02"   onclick="openTest('T02')">Test 2: E♭ and D</button>
       <button class="tab" id="tab-T03"   onclick="openTest('T03')">Test 3: C♯, C, and B</button>
@@ -73,6 +74,46 @@
         </div>
       </article>
 
+
+        <!-- === PRELIMINARY TUNING === -->
+        <article class="test" id="PT">
+          <div class="card">
+            <h2>Preliminary Tuning <span class="badge">PT</span></h2>
+            <h3>Crow Test: Reed Vibrancy</h3>
+            <ol>
+              <li>Blow the reed gently with lips over the wires. Increase air speed until a single pitch sounds.</li>
+              <li>Check the pitch with a tuner. The standard pitch should be between F and G.</li>
+              <li>If blown harder, does a rattling, raucous “crow” sound or does it remain a single tone?</li>
+              <li>If the single pitch is near F or G and the reed crows, proceed to Test 1. If not, make necessary adjustments below.</li>
+            </ol>
+
+            <div class="actions">
+              <button class="pass"  onclick="nextTest('PT')">Pass → Go to Test 1</button>
+              <button class="issue" onclick="toggleDetails('PT_details')">Not Passed → Show Solutions</button>
+              <button class="link"  onclick="prevTest('PT')">← Back to Getting Started</button>
+            </div>
+
+            <div class="details" id="PT_details">
+              <h3>IF SHARP — single pitch above G, non‑vibrant, or no crow:</h3>
+              <ul>
+                <li>Check for normal tip opening (1–1.5mm or 1/16" or less).</li>
+                <li>Open the tip by squeezing wire 1 from the sides (1S) and/or wire 2 from top/bottom (2T). See Wire Adjustment Chart, p. 9.*</li>
+                <li>Evenly sand the front half of the blade toward the tip. File notches to create a “cradle” under the 1st wire (see Fig. 5A).</li>
+                <li>Thin and taper the shaded area toward the tip and corners with a sanding tool, or by scraping the blades (see Fig. 1 and Fig. 1F). Avoid thinning at the resistance point (X).</li>
+                <li>Fix tip‑opening symmetry imbalances by sanding or scraping.**</li>
+              </ul>
+
+              <h3>IF FLAT — single pitch below F:</h3>
+              <ul>
+                <li>Check wire position and tightness.</li>
+                <li>Adjust wires to close the tip opening: 1T and/or 2S/1S.*</li>
+                <li>See “IF FLAT” solutions for Test 1.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+
       <!-- === TEST 1: F and E === -->
       <article class="test" id="T01">
         <div class="card">
@@ -95,9 +136,9 @@
               <li>Flip the reed, opposite (stronger) blade up. (Thumbnail Test)</li>
               <li>Ream for deeper bocal penetration (8–10mm).</li>
               <li>Adjust wires to close tip opening (1T) or strengthen blade arch (2S/1S). Tighten and/or round 1st and 2nd wires.</li>
-              <li>Clip the tip in the yellow shaded area to shorten the blade length, f‑f to e‑e. Cut a very small amount at a time.</li>
-              <li>Check lateral taper of tip. Ensure the center is thicker than corners.</li>
-              <li>Narrow tip width f → d by lightly sanding or filing the rails.</li>
+              <li>Clip the tip in the yellow shaded area to shorten the blade length, f‑f to e‑e. Cut a very small amount at a time.(Fig. 1A)</li>
+              <li>Check lateral taper of tip (Fig. 1D and 1E). Ensure the center is thicker than corners.</li>
+              <li>Narrow tip width f to d by lightly sanding or filing the rails. (Fig. 1A)</li>
             </ul>
             <h3>IF SHARP or rises with articulation:</h3>
             <ul>
@@ -208,7 +249,7 @@
 
           <h3>4.1: Pitch Centering using A♭–B♭ Trill</h3>
           <ol>
-            <li>Play the test notes using the trill fingering: whisper key + 123,123 + A♭ key and trill the RH 2nd finger.</li>
+            <li>Play the test notes using the trill fingering.</li>
             <li>Make necessary adjustments below.</li>
           </ol>
           <p><em>Note:</em> The sound of the B♭ trill is normally foggy.</p>
@@ -300,7 +341,7 @@
           <h2>Test 6: D♭, C, B, and B♭ <span class="badge">T06</span></h2>
           <h3>6.1: Pitch Centering</h3>
           <ol>
-            <li>Slur down loudly to Low D♭, C, B, and B♭. D♭→A♭→D♭, C→G→C, B→F♯→B, B♭→F→B♭, D♭→A♭→D♭.</li>
+            <li>Slur down loudly to Low D♭, C, B, and B♭.</li>
             <li>Check each test note’s pitch on the tuner.</li>
           </ol>
           <div class="actions">
@@ -329,9 +370,11 @@
           <h2>Test 7: Low Register Articulation <span class="badge">T07</span></h2>
           <h3>7.1: Response to Articulation</h3>
           <ol>
-            <li>Articulate rapid 16th notes in pianissimo: F→E→D→C→B→B♭.</li>
+            <li>Articulate rapid 16th notes in pianissimo.</li>
             <li>Make necessary adjustments below.</li>
           </ol>
+          <blockquote>Response test (after all 7 tests pass): Play the F major scale descending from open F to low B♭ with light, short staccato articulation checking for equal response. Also test descending chromatically, and with repeated articulation. If notes do not speak equally, revisit tests.</blockquote>
+
           <div class="actions">
             <button class="pass"  onclick="nextTest('T07')">Pass → Next Test</button>
             <button class="issue" onclick="toggleDetails('T07_details')">Issue → Show Solutions</button>
@@ -360,13 +403,7 @@
           <h3>8.1: Harmonic Tuning</h3>
           <ol>
             <li>With tuner, slur between standard fingering and harmonic fingering (whisper lock may help).</li>
-            <li>Harmonic fingerings:
-              <ul>
-                <li>F♯2: add Low E, D, C, and B keys to the F♯ fingering</li>
-                <li>G2: add Low E, D, C, and B keys to the G fingering without the LH pinky</li>
-                <li>A2: add Low E, D, C, and B keys with a half hole, LH pinky, and an F key instead of an A♭ key</li>
-              </ul>
-            </li>
+
             <li>Repeat for each note.</li>
           </ol>
           <div class="actions">
@@ -396,10 +433,7 @@
           <ol>
             <li>Hold down the A/B♭ register/speaker key with the standard fingering. (If Low C key lowers accidentally, prop the speaker key open with a folded paper shim.)</li>
             <li>Slur between standard and harmonic while watching the tuner.
-              <ul>
-                <li>A2 harmonic: low F + low E + low D + <strong>high A</strong> key</li>
-                <li>B♭ harmonic: low F + low E + low D + <strong>high A</strong> + <strong>low D♭</strong> key</li>
-              </ul>
+
             </li>
             <li>Repeat for each note.</li>
           </ol>
@@ -430,11 +464,8 @@
           <h3>10.1: Harmonic Tuning</h3>
           <ol>
             <li>Hold down the B/C register/speaker key with the standard fingering.</li>
-            <li>Slur between standard and harmonic, comparing pitch:
-              <ul>
-                <li>B3 harmonic: low F + high C key + Pancake key</li>
-                <li>C4 harmonic: low F + high C key</li>
-              </ul>
+            <li>Slur between standard and harmonic, comparing pitch.
+
             </li>
             <li>Repeat for each note.</li>
           </ol>
@@ -472,7 +503,6 @@
           <h3>11.1: Fork B♭ Tuning</h3>
           <ol>
             <li>With tuner, slur between standard fingering and the fork fingering (without holding the register/speaker key), comparing pitch.</li>
-            <li>Fork B♭ fingering: play low G and lift up the 2nd finger in the right hand.</li>
           </ol>
           <div class="actions">
             <button class="pass"  onclick="nextTest('T11')">Pass → Next Test</button>
@@ -505,16 +535,11 @@
           <h3>12.1: Harmonic Tuning</h3>
           <ol>
             <li>Slur between standard (Short C♯ and D) and harmonic fingerings, comparing pitch. (Avoid accidental LH half‑hole on harmonic E.)</li>
-            <li>Harmonic C♯3: low F♯ (no LH half‑hole) + RH 1st‑finger half‑hole</li>
-            <li>E♭ harmonic: low G + RH 1st‑finger half‑hole</li>
-            <li>Alternate E♭ harmonic: low A♭ + LH 1st‑finger half‑hole</li>
             <li>Repeat for each note.</li>
           </ol>
           <h3>12.2: Long C♯ and D Tuning</h3>
           <ol>
             <li>Slur and compare standard → harmonic → long fingerings for each note.</li>
-            <li>Long C3: low F; remove RH 1st finger; add C♯ key.</li>
-            <li>Long D3: low F; remove LH 3rd finger and RH 1st finger.</li>
           </ol>
           <h3>12.3: Ear Plug Test (Short C♯ & D)</h3>
           <ol>
@@ -553,10 +578,7 @@
           <h3>13.1: Alternate Fingering Tunings</h3>
           <ol>
             <li>Slur between standard and alternate fingering, comparing pitch.</li>
-            <li>French E3: low A♭; take LH 3rd finger off.</li>
-            <li>Alternate F3: play A; take LH 1st finger off; add LH register key.</li>
-            <li>Standard F3: low F; add whisper key + LH register key + LH 1st‑finger half‑hole.</li>
-            <li>Alternate F♯3: play B♭; add whisper key + LH register key + LH 1st‑finger half‑hole.</li>
+
           </ol>
           <div class="actions">
             <button class="pass"  onclick="nextTest('T13')">Pass → Next Test</button>
@@ -659,8 +681,6 @@
           <h3>16.1: Harmonic Tuning</h3>
           <ol>
             <li>Slur between standard and harmonic fingering, comparing pitch.</li>
-            <li>Harmonic G3: finger G; remove the right hand.</li>
-            <li>Harmonic A♭: finger G without the right hand; add the right hand’s upper key near RH 1st finger and the B♭ key.</li>
             <li>Repeat for each note.</li>
           </ol>
           <div class="actions">
@@ -719,13 +739,7 @@
           <ol>
             <li>Slur up to the short fingering for these notes, checking for pitch and ease of response. Do not force the note to speak.</li>
             <li>Exercise: slur lower octave to upper.</li>
-            <li>Short fingerings:
-              <ul>
-                <li>Short C: 1st finger with the high C key, no register key</li>
-                <li>Short D: 3rd finger plus register key and high D key</li>
-                <li>Short E♭: 1st three fingers with a half hole on the 1st finger as well as the C♯ key, no register key</li>
-              </ul>
-            </li>
+
             <li>Make adjustments found in Solutions for Upper Register Tunings found in Test 19.</li>
           </ol>
           <div class="actions">
@@ -812,7 +826,17 @@
 
     </section>
   </main>
+  <script src="app.js"> </script>
+
+  <!-- Zoom Modal -->
+  <div id="figModal" class="modal" aria-hidden="true" role="dialog" aria-label="Image preview">
+    <button class="modal-close" aria-label="Close" onclick="closeFigModal()">&times;</button>
+    <div class="modal-stage" onclick="if(event.target===this) closeFigModal()">
+      <img id="figModalImg" alt="" />
+    </div>
+  </div>
+
 </body>
-   <script src="app.js"> </script>
+
 
 </html>
