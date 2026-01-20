@@ -467,3 +467,27 @@ window.addEventListener('DOMContentLoaded', function () {
     }
   });
 })();
+
+
+
+// === Mobile drawer helpers ===
+function toggleSidebar(open) {
+  const sidebar = document.querySelector('.sidebar');
+  const scrim   = document.getElementById('scrim');
+  if (!sidebar || !scrim) return;
+
+  if (open) {
+    sidebar.classList.add('open');
+    scrim.classList.add('show');
+  } else {
+    sidebar.classList.remove('open');
+    scrim.classList.remove('show');
+  }
+}
+
+// Wire up the hamburger button
+(function initMenuToggle() {
+  const btn = document.getElementById('menuToggle');
+  if (!btn) return;
+  btn.addEventListener('click', () => toggleSidebar(true));
+})();

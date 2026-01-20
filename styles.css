@@ -252,3 +252,55 @@ body.modal-open { overflow: hidden; }
   :root { --sub-ex-max: 220px; --sub-fing-max: 200px; --sub-figs-min: 140px; }
   .sub-figs figcaption { font-size: 10px; }
 }
+
+
+
+/* === Mobile drawer menu === */
+.menu-toggle { display: none; }
+
+@media (max-width: 900px) {
+  /* Layout becomes single column */
+  .layout { grid-template-columns: 1fr; }
+
+  /* Hamburger toggle button */
+  .menu-toggle {
+    display: block;
+    position: sticky;
+    top: 0;
+    z-index: 6;
+    padding: 10px 12px;
+    margin: 0;
+    background: #27374a;
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    width: 100%;
+    text-align: left;
+  }
+
+  /* Sidebar as an off-canvas drawer */
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 80vw;               /* drawer width */
+    max-width: 320px;
+    height: 100vh;
+    overflow: auto;
+    transform: translateX(-100%);     /* hidden by default */
+    transition: transform .25s ease;
+    z-index: 7;
+    /* keep your existing background/border styles */
+  }
+  .sidebar.open { transform: translateX(0); }
+
+  /* Scrim (overlay) behind the drawer */
+  .scrim {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.4);
+    display: none;
+    z-index: 5;
+  }
+  .scrim.show { display: block; }
+}
